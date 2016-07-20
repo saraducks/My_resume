@@ -24,10 +24,10 @@ var project = {
 var bio = {
 	"Contact":"12497417491",
 	"Email":"sara@gmail.com",
-	"Github":"saraducks",
-	"Twitter":"saravj",
-	"blog":"www.saravj.com",
-    "Location":"India",
+	"Github":"saraducks.Github.com",
+	"Twitter":"ducks.twitter.com",
+	"blog":"www.ducks.com",
+    "Location":"Australia",
     "skills":["java","C++","Python"],
     "image":"images/fry.jpg",
     "Welcome_message":"Hi i am sara"
@@ -38,7 +38,7 @@ var education = {
 	{
 		"Name":"Anna university",
 		"no_of_years":4,
-		"Location":"India",
+		"Location":"Australia",
 		"Major":["cs"]
 	},
 	{
@@ -108,4 +108,19 @@ for(no_of_projects in project.projects){
 }
 }
 project.display();
+
+ education.display = function(){
+ 	for(no_of_schools in education.schools){
+ 		$("#education").append(HTMLschoolStart);
+ 		var schoolname = HTMLschoolName.replace("%data%",education.schools[no_of_schools].Name);
+ 		var years = HTMLschoolDates.replace("%data%",education.schools[no_of_schools].no_of_years);
+ 		var school_locations = HTMLschoolLocation.replace("%data%",education.schools[no_of_schools].Location);
+ 		var major = HTMLschoolMajor.replace("%data%",education.schools[no_of_schools].Major);
+ 		$(".education-entry").append(schoolname);
+ 		$(".education-entry").append(years);
+ 		$(".education-entry").append(school_locations);
+ 		$(".education-entry").append(major);
+ 	}
+ }
+education.display();
 $("#mapDiv").append(googleMap);
